@@ -1,5 +1,5 @@
 # CodeHustling 🌐  
-[🔗 Live Site] - https://marinsabo.github.io/codehustling/
+[🔗 Live Site] - https://marinsabo.github.io/Code-Hustling/
 
 A **custom-built website** for the Instagram community led by **Fabion Kallaku**, a web development and industry influencer with over 185k followers. The website serves as a **central hub** for all information about Fabion and his community, enhancing accessibility, engagement, and brand credibility.
 
