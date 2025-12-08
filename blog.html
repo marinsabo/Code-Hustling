@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3RSX3BPKE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-H3RSX3BPKE');
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Insights, news, and tips from the Code Hustling community." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/32c0f3b9ec.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+
+    <title>Blog | Codehustling</title>
+
+    <style>
+        .blog-detail {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            color: var(--text-muted);
+            border-radius: 100px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            border-color: var(--accent-primary);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d4d4d4;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+
+        .blog-card {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="slike/logo.webp" alt="Codehustling Logo" />
+            </a>
+
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn">
+                <span class="navicon"></span>
+            </label>
+
+            <nav>
+                <ul class="menu nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BLOG HEADER -->
+    <section class="hero" style="min-height: 40vh; align-items: flex-end; padding-bottom: 4rem;">
+        <div class="container hero-content">
+            <h1 class="hero-title" data-aos="fade-up">
+                Our <span class="text-gradient">Blog</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Industry news, dev tips, and community updates.
+            </p>
+        </div>
+    </section>
+
+    <!-- BLOG CONTENT AREA -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+
+            <!-- LIST VIEW -->
+            <div id="blog-list" class="about-grid blog-grid">
+                <!-- Posts will be injected here by JS -->
+            </div>
+
+            <!-- DETAIL VIEW (Hidden by default) -->
+            <div id="blog-detail" class="blog-detail">
+                <button onclick="showList()" class="back-btn">
+                    <i class="fa fa-arrow-left"></i> Back to Blog
+                </button>
+                <div class="feature-card" style="padding: 3rem;">
+                    <div class="post-header">
+                        <div class="blog-meta" style="justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span id="detail-date" class="blog-date"></span>
+                            <span id="detail-tag" class="blog-tag"></span>
+                        </div>
+                        <h1 id="detail-title" class="text-gradient" style="font-size: 2.5rem; margin-bottom: 1rem;">
+                        </h1>
+                        <div class="blog-author" style="justify-content: center; border: none; padding: 0;">
+                            <div class="author-avatar-small">F</div>
+                            <span>Fabion Kallaku</span>
+                        </div>
+                    </div>
+                    <div id="detail-body" class="post-content">
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Col 1: Logo & Summary -->
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <img src="slike/logo.webp" alt="Logo" />
+                    </div>
+                    <h3>Code Hustling</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Products -->
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <div class="footer-links">
+                        <p>Network Advertising</p>
+                        <p>Learn to Code</p>
+                        <p>Social Media Marketing</p>
+                    </div>
+                </div>
+
+                <!-- Col 3: Socials -->
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/codehustling/" target="_blank" class="social-icon">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="mailto:codehustling@gmail.com" target="_blank" class="social-icon">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/networking-room/" target="_blank" class="social-icon">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.paypal.com/paypalme/FKallaku" target="_blank" class="social-icon">
+                            <i class="fa fa-paypal"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 2rem;">
+                &copy; 2025 Code Hustling. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const posts = [
+            {
+                id: 10,
+                title: "Year in Review: Our Community Growth",
+                date: "December 15, 2025",
+                tag: "Community",
+                summary: "As we wrap up 2025, it's incredible to look back at how far we've come. From 50k to over 100k active members, Code Hustling has become a global force.",
+                content: `
+                    <p>As we wrap up 2025, it's incredible to look back at how far we've come. From 50k to over 100k active members, Code Hustling has become a global force. This year, we launched new mentorship programs, hosted our first global summit, and helped thousands land their dream jobs.</p>
+                    <h3>The Power of Numbers</h3>
+                    <p>Reaching 100,000 members isn't just a metric; it's a testament to the shared passion for growth and learning. Every new member brings a unique perspective, adding to the collective intelligence of our group. This diversity is our strength.</p>
+                    <h3>Looking Ahead to 2026</h3>
+                    <p>We are not slowing down. In 2026, we plan to launch a dedicated Code Hustling job board, exclusive advanced workshops, and more in-person meetups across Europe and the US.  Here is to an even bigger 2026!</p>
+                `
+            },
+            {
+                id: 9,
+                title: "The Importance of Soft Skills",
+                date: "October 20, 2025",
+                tag: "Career",
+                summary: "We often obsess over syntax and algorithms, but in 2025, soft skills are the real differentiator. Communication, empathy, and adaptability are what turn a good coder into a great leader.",
+                content: `
+                    <p>We often obsess over syntax and algorithms, but in 2025, soft skills are the real differentiator. Communication, empathy, and adaptability are what turn a good coder into a great leader.</p>
+                    <h3>Communication is Key</h3>
+                    <p>Writing clean code is important, but if you can't explain <em>why</em> you wrote it that way to a product manager or a designer, you will struggle. Learning to bridge the gap between technical and non-technical stakeholders is a superpower.</p>
+                    <h3>Empathy in Engineering</h3>
+                    <p>Empathy isn't just for UX designers. Understanding the pain points of your users—and your fellow developers—leads to better software architecture and more maintainable codebases. Code is written for humans first, machines second.</p>
+                `
+            },
+            {
+                id: 8,
+                title: "How to Land Your First Tech Job",
+                date: "September 10, 2025",
+                tag: "Jobs",
+                summary: "The market is competitive, but opportunities are everywhere if you know where to look. Tailoring your portfolio, contributing to open source, and networking effectively are key.",
+                content: `
+                    <p>The market is competitive, but opportunities are everywhere if you know where to look. Tailoring your portfolio, contributing to open source, and networking effectively are key. Stop blind-applying and start building meaningful connections.</p>
+                    <h3>Build in Public</h3>
+                    <p>Don't just hide your projects on GitHub. Tweet about them, write blog posts (like this one!), and share your learning journey on LinkedIn. Employers want to see your problem-solving process, not just the finished product.</p>
+                    <h3>Leverage the Community</h3>
+                    <p>Referrals are still the number one way to get hired. Be active in communities like Code Hustling. Help others, ask smart questions, and let people know you are looking. You never know who might be hiring.</p>
+                `
+            },
+            {
+                id: 7,
+                title: "Understanding Modern Frameworks",
+                date: "August 05, 2025",
+                tag: "Tech Stack",
+                summary: "React, Vue, Svelte, Angular... the list goes on. It's easy to get overwhelmed by the choices. The secret isn't learning them all, but understanding the underlying patterns.",
+                content: `
+                    <p>React, Vue, Svelte, Angular... the list goes on. It's easy to get overwhelmed by the choices. The secret isn't learning them all, but understanding the underlying patterns. Component-based architecture is here to stay, and mastering one often unlocks the others.</p>
+                    <h3>The Common Thread: Components</h3>
+                    <p>Whether it's a React Component, a Vue SFC, or an Angular Directive, the concept is the same: encapsulated, reusable UI chunks. Focus on learning how state flows (props down, events up) and you'll be able to switch frameworks with ease.</p>
+                    <h3>Don't Chase Hype</h3>
+                    <p>It's tempting to jump on the newest framework every week. But solidity comes from deep knowledge. Pick one, master it, and build real things. Your skills will transfer.</p>
+                `
+            },
+            {
+                id: 6,
+                title: "Networking: Your Best Career Tool",
+                date: "July 18, 2025",
+                tag: "Networking",
+                summary: "Your network is your net worth. It's a cliché for a reason. In the tech industry, referrals are the golden ticket. Join local meetups, participate in online forums like ours.",
+                content: `
+                    <p>Your network is your net worth. It's a cliché for a reason. In the tech industry, referrals are the golden ticket. Join local meetups, participate in online forums like ours, and don't be afraid to reach out to people you admire.</p>
+                    <h3>Give More Than You Take</h3>
+                    <p>Networking isn't about asking for favors. It's about building relationships. Offer value first. Can you introduce two people? Can you share a useful resource? Being known as a helper is the best reputation you can build.</p>
+                    <h3>Online vs. Offline</h3>
+                    <p>While Twitter/X and LinkedIn are great, nothing beats face-to-face interaction. Attend local meetups, hackathons, and conferences. The bonds formed over pizza and debugging are strong.</p>
+                `
+            },
+            {
+                id: 5,
+                title: "The Rise of AI in Coding",
+                date: "June 22, 2025",
+                tag: "AI trends",
+                summary: "AI assistants are not replacing developers; they are supercharging them. Those who embrace these tools are shipping faster and with fewer bugs.",
+                content: `
+                    <p>AI assistants are not replacing developers; they are supercharging them. Those who embrace these tools are shipping faster and with fewer bugs. The role of a developer is shifting from writing syntax to architecting solutions and guiding AI.</p>
+                    <h3>AI as a Pair Programmer</h3>
+                    <p>Think of AI not as a replacement, but as a tireless junior developer who knows the documentation by heart. It can write the boilerplate, suggest refactors, and spot bugs, freeing you to focus on the complex business logic.</p>
+                    <h3>The Human Element</h3>
+                    <p>AI can write code, but it can't understand user intent, negotiate with stakeholders, or design a system that fits a specific business context. Those human skills are becoming more valuable, not less.</p>
+                `
+            },
+            {
+                id: 4,
+                title: "Building Scalable CSS Architectures",
+                date: "May 12, 2025",
+                tag: "CSS",
+                summary: "CSS can become a nightmare in large projects if not managed well. Methodologies like BEM, Utility-first (Tailwind), or CSS-in-JS all have their place.",
+                content: `
+                    <p>CSS can become a nightmare in large projects if not managed well. Methodologies like BEM, Utility-first (Tailwind), or CSS-in-JS all have their place. The key is consistency and defining a design system early on.</p>
+                    <h3>The Problem with Global Scope</h3>
+                    <p>The hardest part of CSS is that everything is global by default. Changing a class on one page might break a button on another. This is why encapsulation strategies (like CSS Modules or Shadow DOM) and naming conventions (BEM) are critical.</p>
+                    <h3>Design Tokens</h3>
+                    <p>In 2025, using raw hex codes is a no-no. We use Design Tokens (variables for colors, spacing, fonts) to ensure our UI is consistent and easy to update. A change in one variable propagates everywhere.</p>
+                `
+            },
+            {
+                id: 3,
+                title: "5 Tips for Junior Developers",
+                date: "April 08, 2025",
+                tag: "Tips",
+                summary: "1. Don't be afraid to break things. 2. Read other people's code. 3. Master the basics before the frameworks.",
+                content: `
+                    <p>Being a junior developer is overwhelming. Here are 5 tips to keep you on track:</p>
+                    <h3>1. Don't be afraid to break things</h3>
+                    <p>That's what version control (Git) is for. Experimentation is the fastest way to learn. If you mess up, you can always revert.</p>
+                    <h3>2. Read other people's code</h3>
+                    <p>You write code 10% of the time and read it 90% of the time. Go to open source repos and see how the pros structure their projects.</p>
+                    <h3>3. Master the basics before the frameworks</h3>
+                    <p>React changes every year. DOM manipulation and JavaScript fundamentals stay the same. Invest in the foundation.</p>
+                    <h3>4. Ask questions, but try to solve it first</h3>
+                    <p>Seniors love helping, but they love it more when you say "I tried X, Y, and Z, but I'm still stuck." Show your effort.</p>
+                    <h3>5. Rest is part of the work</h3>
+                    <p>Burnout is real. Your brain solves problems while you sleep or walk. Step away from the screen.</p>
+                `
+            },
+            {
+                id: 2,
+                title: "Why JavaScript is Still King",
+                date: "March 14, 2025",
+                tag: "JavaScript",
+                summary: "Despite the rise of new languages, JavaScript remains the language of the web. Its versatility, from frontend to backend and even mobile, makes it indispensable.",
+                content: `
+                    <p>Despite the rise of new languages, JavaScript remains the language of the web. Its versatility, from frontend to backend and even mobile, makes it indispensable. The ecosystem is thriving more than ever with runtimes like Bun and Deno pushing boundaries.</p>
+                    <h3>Full Stack in One Language</h3>
+                    <p>The ability to write backend code (Node.js/Bun) share types (TypeScript) with the frontend, and run everywhere is an unmatched value proposition. It reduces context switching for teams and streamlines hiring.</p>
+                    <h3>The Ecosystem</h3>
+                    <p>npm is the largest package registry in the world. Whatever problem you have, someone has probably solved it and published a package for it. This accelerates development speed immensely.</p>
+                `
+            },
+            {
+                id: 1,
+                title: "The State of Web Development in 2025",
+                date: "February 01, 2025",
+                tag: "Industry",
+                summary: "2025 is shaping up to be a pivotal year. We are seeing a shift back to server-side rendering, a focus on edge computing, and a massive adoption of progressive web apps.",
+                content: `
+                    <p>2025 is shaping up to be a pivotal year. We are seeing a shift back to server-side rendering, a focus on edge computing, and a massive adoption of progressive web apps. The web is faster, smarter, and more integrated than ever before.</p>
+                    <h3>The Return of the Server</h3>
+                    <p>We swung too far into client-side rendering. Now, frameworks like Next.js and Remix are bringing the server back into the picture, giving us faster initial loads and better SEO.</p>
+                    <h3>Edge Computing</h3>
+                    <p>Your code is running closer to your users than ever. Edge functions allow us to deliver personalized experiences with zero latency, regardless of where the user is in the world.</p>
+                `
+            }
+        ];
+
+        function renderList() {
+            const listContainer = document.getElementById('blog-list');
+            listContainer.innerHTML = '';
+
+            posts.forEach((post, index) => {
+                const delay = index * 100;
+                const html = `
+                    <article class="feature-card blog-card" onclick="showPost(${post.id})" data-tilt data-aos="fade-up" data-aos-delay="${delay}">
+                        <div class="blog-meta">
+                            <span class="blog-date">${post.date}</span>
+                            <span class="blog-tag">${post.tag}</span>
+                        </div>
+                        <h2 class="feature-title">${post.title}</h2>
+                        <p>${post.summary}</p>
+                        <div class="blog-author">
+                            <div class="author-avatar-small">F</div>
+                            <span>Fabion Kallaku</span>
+                        </div>
+                    </article>
+                `;
+                listContainer.innerHTML += html;
+            });
+
+            // Re-init Tilt for new elements
+            VanillaTilt.init(document.querySelectorAll(".blog-card"), {
+                max: 5,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.1,
+            });
+        }
+
+        function showPost(id) {
+            const post = posts.find(p => p.id === id);
+            if (!post) return;
+
+            document.getElementById('blog-list').style.display = 'none';
+            document.getElementById('blog-detail').style.display = 'block';
+
+            document.getElementById('detail-title').innerText = post.title;
+            document.getElementById('detail-date').innerText = post.date;
+            document.getElementById('detail-tag').innerText = post.tag;
+            document.getElementById('detail-body').innerHTML = post.content;
+
+            // Scroll to top of content
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showList() {
+            document.getElementById('blog-detail').style.display = 'none';
+            document.getElementById('blog-list').style.display = 'grid';
+
+            // Scroll back to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            renderList();
+        });
+
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 800,
+            speedAsDuration: true,
+            easing: 'easeInOutCubic',
+        });
+    </script>
+</body>
+
+</html>
