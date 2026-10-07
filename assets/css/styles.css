@@ -238,12 +238,71 @@ p {
   align-items: center;
 }
 
-.hero-img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 20px;
+.code-window {
+  background: var(--bg-raised);
   border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(99, 102, 241, 0.08);
+  overflow: hidden;
+}
+
+.code-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.code-bar span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #2e2e36;
+}
+
+.code-bar span:first-child {
+  background: #ff5f57;
+}
+
+.code-bar span:nth-child(2) {
+  background: #febc2e;
+}
+
+.code-bar span:nth-child(3) {
+  background: #28c840;
+}
+
+.code-bar em {
+  margin-left: 0.75rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.code-window pre {
+  margin: 0;
+  padding: 1.5rem 1.5rem 1.75rem;
+  font: 0.95rem/1.75 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color: #d6d6de;
+  overflow-x: auto;
+}
+
+.code-window .k {
+  color: #c792ea;
+}
+
+.code-window .f {
+  color: #82aaff;
+}
+
+.code-window .s {
+  color: #c3e88d;
+}
+
+.code-window .c {
+  color: #6b6b78;
+  font-style: italic;
 }
 
 .hero h1 {
@@ -314,10 +373,25 @@ p {
 }
 
 .card-icon {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1.5rem;
+  border-radius: 12px;
+  background: rgba(123, 123, 245, 0.12);
+  color: var(--accent);
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* Quote */
@@ -370,11 +444,19 @@ p {
   order: 2;
 }
 
+.row-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 5 / 4;
+  padding: 2.5rem;
+  background: #ecebf7;
+  border-radius: 20px;
+}
+
 .row-img img {
-  width: 100%;
-  max-width: 440px;
-  margin: 0 auto;
-  border-radius: var(--radius);
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .row p {
@@ -710,9 +792,9 @@ textarea {
     gap: 3rem;
   }
 
-  .hero-img {
-    max-width: 420px;
-    aspect-ratio: 4 / 3;
+  .code-window pre {
+    font-size: 0.85rem;
+    padding: 1.25rem;
   }
 
   .row + .row {
@@ -723,8 +805,8 @@ textarea {
     order: 0;
   }
 
-  .row-img img {
-    max-width: 340px;
+  .row-img {
+    padding: 1.75rem;
   }
 
   .contact {
