@@ -440,23 +440,132 @@ p {
   margin-top: 7rem;
 }
 
-.row.flip .row-img {
+.row.flip > .code-window {
   order: 2;
 }
 
-.row-img {
+/* chat mock */
+.chat ul {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.chat li,
+.review .comment {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.av {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 5 / 4;
-  padding: 2.5rem;
-  background: #ecebf7;
-  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #fff;
 }
 
-.row-img img {
-  max-height: 100%;
-  object-fit: contain;
+.chat strong,
+.review strong {
+  font-size: 0.9rem;
+}
+
+.chat p,
+.review .comment p {
+  font-size: 0.95rem;
+  margin: 0.1rem 0 0;
+}
+
+/* contribution graph mock */
+.graph-body {
+  padding: 1.5rem;
+}
+
+.cells {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-auto-flow: column;
+  gap: 4px;
+}
+
+.graph i {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 3px;
+}
+
+.graph .l0 { background: #1d1d24; }
+.graph .l1 { background: #2f2f6b; }
+.graph .l2 { background: #4646a8; }
+.graph .l3 { background: #6366f1; }
+.graph .l4 { background: #a5a8ff; }
+
+.graph-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.graph-foot strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.legend i {
+  width: 11px;
+}
+
+/* code review mock */
+.review .diff {
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.review .diff span {
+  display: block;
+  padding: 0 1.5rem;
+}
+
+.review .add {
+  background: rgba(63, 182, 139, 0.12);
+  color: #8fdcb9;
+}
+
+.review .del {
+  background: rgba(224, 108, 117, 0.12);
+  color: #ef9aa1;
+}
+
+.review .comment {
+  margin: 0 1.5rem 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.badge {
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(63, 182, 139, 0.15);
+  color: #6fd3a6;
 }
 
 .row p {
@@ -801,12 +910,16 @@ textarea {
     margin-top: 5rem;
   }
 
-  .row.flip .row-img {
+  .row.flip > .code-window {
     order: 0;
   }
 
-  .row-img {
-    padding: 1.75rem;
+  .graph-body {
+    padding: 1.1rem;
+  }
+
+  .cells {
+    gap: 3px;
   }
 
   .contact {
