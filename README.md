@@ -1,51 +1,26 @@
-# CodeHustling 🌐  
-[🔗 Live Site] - https://marinsabo.github.io/Code-Hustling/
+<h1 align="center">Code Hustling</h1>
 
-A **custom-built website** for the Instagram community led by **Fabion Kallaku**, a web development and industry influencer with over 185k followers. The website serves as a **central hub** for all information about Fabion and his community, enhancing accessibility, engagement, and brand credibility.
+<p align="center">A website built for the web development community led by Fabion Kallaku. Before pivoting to AI, Fabion ran a web dev community on Instagram with over 100k followers. He wanted a modern, tech-feel central platform where he could attract new followers and share blog posts and news with both new and existing ones.</p>
 
----
+## Links
 
-## 🎯 Project Overview  
-The goal of the CodeHustling website was to:  
-- Centralize information about Fabion and his Instagram community  
-- Provide an organized, visually appealing platform for followers  
-- Boost engagement and improve user experience for visitors
+- [Repo](https://github.com/marinsabo/Code-Hustling "Code-Hustling Repo")
+- [Live](https://marinsabo.github.io/Code-Hustling/ "Live View")
 
----
+## Screenshots
 
-## 🛠 Built With  
-- **HTML5** – Semantic structure and accessible content  
-- **CSS3** – Responsive layouts, modern styling, and animations  
-- **JavaScript (vanilla)** – Interactive components and dynamic behavior  
-- **Responsive Design** – Optimized for desktop, tablet, and mobile  
-- **SEO Best Practices** – Structured content for improved visibility  
-- **Hosting & Domain Management** – Full deployment setup  
+![Home page – desktop](.github/screenshots/screenshot-desktop.png "Desktop view")
 
----
+![Home page – mobile](.github/screenshots/screenshot-mobile.png "Mobile view")
 
-## 💡 Challenges & Solutions  
+## Built With
 
-| Challenge | Solution |
-|-----------|---------|
-| Centralized Information | Organized content with clear navigation and sections |
-| Community Engagement | Interactive features and prominent call-to-actions to encourage interaction |
-| Hosting & Deployment | Proper domain setup and optimized hosting for smooth performance |
+- HTML5
+- CSS3
 
----
+## AI Usage
 
-## 🚀 Development Process  
-1. **Discovery Call** – Gathered project requirements and expectations  
-2. **Market & Competitor Analysis** – Researched web development communities and similar platforms  
-3. **Design Phase** – Created wireframes and high-fidelity mockups in Figma  
-4. **Development Phase** – Built a fully custom website using HTML, CSS, and JavaScript  
-5. **SEO Optimization** – Implemented meta tags, structured data, and performance optimizations  
-6. **Hosting & Deployment** – Configured domain and hosting for live deployment  
-7. **Ongoing Maintenance** – Regular updates and optimizations to ensure smooth operation
+I used generative AI as a support tool in this project:
 
----
-
-## 🎨 Design Highlights  
-- Clean, modern design reflecting a professional web development brand  
-- Clear hierarchy and navigation for easy information access  
-- Responsive layouts for all devices  
-- Engaging visual elements to reflect the community’s identity  
+- drafting the page copy, which I then reviewed and edited
+- writing small code snippets, which I reviewed, tested, and adapted before including them
